@@ -1,0 +1,345 @@
+  [1m[35m (58.1ms)[0m  [1m[35mCREATE DATABASE `ScaffoldApp_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `ScaffoldApp_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (548.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (430.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('234179451191190645', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (14.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-02-03 12:44:36.383555', '2021-02-03 12:44:36.383555')[0m
+  [1m[36mTRANSACTION (51.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('234179451191190645')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('234179451191190645', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBooks (20210203124553)
+  [1m[35m (1554.7ms)[0m  [1m[35mCREATE TABLE `books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `book_name` varchar(255), `author` varchar(255), `price` float(24), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210203124553')[0m
+  [1m[36mTRANSACTION (53.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('234179451191190645')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-02-03 18:18:20 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/crypex2/.rvm/gems/ruby-3.0.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/crypex2/.rvm/gems/ruby-3.0.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.4ms | Allocations: 518)
+Completed 200 OK in 57ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 4186)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-03 18:18:38 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1228)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/crypex2/ScaffoldApp/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.46.0
+Time: 7117ms
+Built at: 02/03/2021 6:18:51 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 13160.4ms | Allocations: 18415)
+Completed 200 OK in 13224ms (Views: 13206.4ms | ActiveRecord: 1.1ms | Allocations: 20164)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-03 18:18:59 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 7136)
+Completed 200 OK in 86ms (Views: 76.3ms | ActiveRecord: 1.0ms | Allocations: 10761)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2021-02-03 18:19:03 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 240.2ms | Allocations: 5031)
+  Rendered books/new.html.erb within layouts/application (Duration: 243.1ms | Allocations: 5403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 250.4ms | Allocations: 8263)
+Completed 200 OK in 283ms (Views: 251.2ms | ActiveRecord: 20.8ms | Allocations: 12628)
+
+
+Started GET "/books" for 127.0.0.1 at 2021-02-03 18:19:05 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3637)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.6ms | Allocations: 4098)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2021-02-03 18:19:27 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 3.7ms | Allocations: 870)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3851)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 4324)
+
+
+Started GET "/books" for 127.0.0.1 at 2021-02-03 18:19:30 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 769)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3639)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.7ms | Allocations: 4100)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2021-02-03 18:20:32 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.9ms | Allocations: 870)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3839)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4303)
+
+
+Started POST "/books" for 127.0.0.1 at 2021-02-03 18:20:53 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"book_name"=>"C programmng", "author"=>"abc", "price"=>"200"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (73.9ms)[0m  [1m[32mINSERT INTO `books` (`book_name`, `author`, `price`, `created_at`, `updated_at`) VALUES ('C programmng', 'abc', 200.0, '2021-02-03 12:50:53.206019', '2021-02-03 12:50:53.206019')[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 118ms (ActiveRecord: 110.8ms | Allocations: 3405)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2021-02-03 18:20:53 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3115)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 1.0ms | Allocations: 6460)
+
+
+Started GET "/books" for 127.0.0.1 at 2021-02-03 18:20:54 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3757)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.5ms | Allocations: 4218)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2021-02-03 18:20:58 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2979)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 1.4ms | Allocations: 4026)
+
+
+Started GET "/books" for 127.0.0.1 at 2021-02-03 18:20:59 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3744)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 2.5ms | Allocations: 4205)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2021-02-03 18:21:00 +0530
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.8ms | Allocations: 934)
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4053)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 1.1ms | Allocations: 5243)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2021-02-03 18:21:07 +0530
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"book_name"=>"C programmng", "author"=>"abc", "price"=>"300"}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mBook Update (167.3ms)[0m  [1m[33mUPDATE `books` SET `books`.`price` = 300.0, `books`.`updated_at` = '2021-02-03 12:51:07.249847' WHERE `books`.`id` = 1[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (97.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 275ms (ActiveRecord: 267.2ms | Allocations: 3403)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2021-02-03 18:21:07 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2981)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 1.6ms | Allocations: 4031)
+
+
+Started GET "/books" for 127.0.0.1 at 2021-02-03 18:21:09 +0530
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3744)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.6ms | Allocations: 4205)
+
+
+  [1m[36mBook Load (9.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` /* loading for inspect */ LIMIT 11[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY `books`.`id` ASC LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY `books`.`id` DESC LIMIT 1[0m
+  [1m[36mBook Destroy (90.8ms)[0m  [1m[31mDELETE FROM `books`[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` /* loading for inspect */ LIMIT 11[0m
+  [1m[35m (34.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `books`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-02-04 14:27:02 +0530
+  [1m[35m (50.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (160.3ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/views/books/index.html.erb:16
+  Rendered books/index.html.erb within layouts/application (Duration: 202.9ms | Allocations: 1410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 526.8ms | Allocations: 10785)
+Completed 200 OK in 608ms (Views: 402.4ms | ActiveRecord: 160.3ms | Allocations: 14310)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2021-02-04 14:27:08 +0530
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 209.5ms | Allocations: 3024)
+  Rendered books/new.html.erb within layouts/application (Duration: 241.3ms | Allocations: 3398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 248.2ms | Allocations: 6261)
+Completed 200 OK in 393ms (Views: 248.9ms | ActiveRecord: 135.1ms | Allocations: 10638)
+
+
+Started POST "/books" for 127.0.0.1 at 2021-02-04 14:27:33 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"book_name"=>"java Programming", "author"=>"games Gosling", "price"=>"500"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (38.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (41.4ms)[0m  [1m[32mINSERT INTO `books` (`book_name`, `author`, `price`, `created_at`, `updated_at`) VALUES ('java Programming', 'games Gosling', 500.0, '2021-02-04 08:57:33.136357', '2021-02-04 08:57:33.136357')[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (52.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 142ms (ActiveRecord: 133.0ms | Allocations: 3408)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2021-02-04 14:27:33 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 37.4ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 3119)
+Completed 200 OK in 72ms (Views: 44.1ms | ActiveRecord: 1.0ms | Allocations: 6463)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2021-02-04 14:27:36 +0530
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.8ms | Allocations: 935)
+  Rendered books/edit.html.erb within layouts/application (Duration: 25.9ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 4060)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 1.7ms | Allocations: 5232)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2021-02-04 14:27:43 +0530
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"book_name"=>"java Programming", "author"=>"games Gosling", "price"=>"450.0"}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mBook Update (259.8ms)[0m  [1m[33mUPDATE `books` SET `books`.`price` = 450.0, `books`.`updated_at` = '2021-02-04 08:57:43.683826' WHERE `books`.`id` = 1[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (55.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 330ms (ActiveRecord: 318.1ms | Allocations: 3416)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2021-02-04 14:27:44 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/books_controller.rb:62:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2988)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 1.3ms | Allocations: 4041)
+
+
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` /* loading for inspect */ LIMIT 11[0m
