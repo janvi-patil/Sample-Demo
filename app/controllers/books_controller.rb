@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
+
     @books = Book.
   end
 
@@ -12,7 +13,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
+    @book = Book
   end
 
   # GET /books/1/edit
